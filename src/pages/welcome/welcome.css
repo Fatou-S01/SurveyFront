@@ -1,0 +1,15 @@
+.btn1{
+  text-decoration: none;
+  color: #2A9E9E;
+  border: black solid 1px;
+  border-radius: 20px;
+  padding: 8px;
+}
+
+.bord{
+    border-right: #2A9E9E 3px solid;
+    height: 100px;
+}
+.votre{
+    margin-bottom: 100px;
+}

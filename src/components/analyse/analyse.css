@@ -1,0 +1,24 @@
+
+th{
+    background-color:#2A9E9E;
+}
+
+.tableResultat{
+    width:50%;
+}
+
+.analyse{
+    margin-top:70px;
+    margin-left: 60px;
+}
+
+.graph1{
+    width:60%;
+}
+
+.emoji{
+    width:70px;
+}
+.sentiment{
+    font-size: 20px;
+}
