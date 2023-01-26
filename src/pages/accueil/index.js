@@ -25,11 +25,13 @@ function Accueil(){
       <section id="hero" className="d-flex align-items-center">
           <div className='container45 ' style={{backgroundColor: '#fff'}}>
               <Grid container style= {{backgroundColor: '#fff'}}>
-                  <Grid item xs = {6}>
-                      <h1 className="logo45">Bienvenue dans<h2><i className="logo_1">Faki</i><i className="text-dark logo_2">Survey</i></h2></h1>
-                      <h3 className="text-dark pb-3 animated zoomIn">Votre plateforme de création de sondage préférée</h3>
+                  <Grid item xs = {6} style={{marginTop:'100px'}}>
+                      <h1 className="logo45" style={{fontFamily:'Prata,sans-serif'}}>Bienvenue dans<h2><i className="logo_1">Faki</i><i className="text-dark logo_2">Survey</i></h2></h1>
+                      
+                      <h3 className="text-dark pb-3 animated zoomIn" >Votre plateforme de création de sondage préférée</h3>
+                      <p style={{fontFamily:'Inter,serif', lineHeight:'25px'}}>FakiSurvey est une plateforme de création de sondage qui vous aidera à la prise de décision. Elle permet de réaliser des études de marché rapidement et aussi d’offrir une expérience client fluide.</p>
                       <div className="d-flex justify-content-center justify-content-lg-start">
-                          <a href="/inscription" className="btn-get-started scrollto creer">Créer sondage</a>
+                          <a href="/Connexion" className="btn-get-started scrollto creer">Créer sondage</a>
                       </div>
                   </Grid>
 
@@ -53,11 +55,11 @@ function Accueil(){
               <Container>
                   <Grid container className='mt-5' style={{height: '400px',backgroundColor: '#fff'}}>
                       <Grid item xs = {6}className="d-flex align-items-center">
-                          <img src={hero} className="img-fluid" alt=""/>
+                          <img src={hero} className="img-fluid" alt="" width={'500px'} height={'400px'}/>
                       </Grid>
                       <Grid className="pt-4 pt-lg-0 content" item xs = {6}>
                           <h3 style={{ marginTop: '100px' }}>Créer à partir de zéro</h3>
-                          <p className="fst-italic">
+                          <p className="fst-italic" >
                               A partir de zéro, créez votre propre sondage, en ajoutant vos propres questions et leurs propres types de réponse.
                           </p>
                           <div className="d-flex justify-content-center justify-content-lg-start">
@@ -72,8 +74,8 @@ function Accueil(){
 
                   <Grid container style={{height: '400px', backgroundColor: '#fff'}}>
 
-                      <Grid item xs = {6} className="content d-flex flex-column justify-content-center align-items-stretch  order-2 order-lg-1">
-                              <h3>Créer à partir de modèles personnalisables</h3>
+                      <Grid item xs = {6} className="content d-flex flex-column justify-content-center align-items-stretch  order-2 order-lg-1" >
+                              <h3 style={{marginTop:'100px'}}>Créer à partir de modèles personnalisables</h3>
                               <p>
                                   Vous voulez y allez vite? Eh bien des modèles personnalisables sont déjà à votre disposition. Choisissez juste un et personnalisez le pour créer votre propre sondage.
                               </p>
@@ -82,7 +84,7 @@ function Accueil(){
                               </div>
                       </Grid>
                       <Grid item xs = {6}d v className="align-items-stretch order-1 order-lg-2 quest" >
-                        <img src={questionnaire} style={{width: '600px'}} alt='ques'/>
+                        <img src={questionnaire}  width={'400px'} height={'300px'} style = {{marginLeft:'130px'}} alt='ques'/>
                       </Grid>
                   </Grid>
               </Container>
@@ -92,7 +94,7 @@ function Accueil(){
 
               <Grid container className="mt-5" style={{height: '400px', backgroundColor: '#fff'}}>
                   <Grid item xs = {6} className="d-flex align-items-center">
-                      <img src={skills} className="img-fluid" alt=""/>
+                      <img src={skills} className="img-fluid" alt=""  width={'400px'} height={'300px'}/>
                   </Grid>
                   <Grid item xs = {6} className="pt-4 pt-lg-0 content">
                       <h3 style={{marginTop: '100px'}}>Importez vos questions</h3>

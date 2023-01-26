@@ -9,6 +9,7 @@ import { ViewAperçu } from "../ViewAperçu";
 import { ViewAperçu1 } from "../ViewAperçu/index1";
 import edit from '../../assets/edit.png';
 import { Button, Modal } from 'antd';
+import axios from 'axios'
 
 
 
@@ -20,8 +21,24 @@ function Question(){
   const [mails, setMails] = useState("");
   
   const [question_item, Setquestion_item] = useState([]);
-
-
+  /*invite user*/
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    mails.split(',').map((email,index)=>{
+      axios.patch(`http://127.0.0.1:4030/api/sondages/InviteUser/${params.id_sondage}`, 
+      {
+        "inviteEmail":`${email}`
+      })
+      axios.post(`http://127.0.0.1:4030/api/email/plain-text-email`, 
+      {
+        "toemail":`${email}`,
+        "objet":"Invitation du sondage",
+        "message":`Vous avez été invité à rejoindre ce sondage voici le lien: http://127.0.0.1:3000/Creer_sondage/:id_user/:titre_sondage/:id_sondage`
+      })
+    })
+    alert(mails);
+    setIsModalOpen(false);
+  }
   const Add = () => {
     const test = numberQ + 1;
     Setquestion_item([...question_item,test]);
@@ -32,12 +49,7 @@ function Question(){
       setMails("")
     };
 
-    const handleSubmit = (event) => {
-      event.preventDefault();
-      //ON DOIT FAIRE LE TRAITEMENT BACKEND ICI ET ENVOYER LE LIEN DU SONDAGE AUX COEDITEURS
-      alert(mails);
-      setIsModalOpen(false);
-    }
+ 
 
   const handleCancel = () => {
       setIsModalOpen(false);

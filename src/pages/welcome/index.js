@@ -18,10 +18,11 @@ function Welcome(){
     <section id="hero" className="align-items-center">
 
       <Container>
-        <Grid container>
+        <Grid container style = {{marginLeft:'20px'}} >
           <Grid item xs={6} className="justify-content-center pt-4 pt-lg-0 order-2 order-lg-1" style={{marginTop:'10px'}}>
             <h1 className="text-dark">Avec<h2><i className="vert">Faki</i><i className="text-dark">Survey</i></h2></h1>
             <h3 className="text-dark pb-3 animated zoomIn">Créer des sondages devient plus facile</h3>
+            <p style={{fontFamily:'Inter,serif', lineHeight:'25px'}}>FakiSurvey est une plateforme de création de sondage qui vous aidera à la prise de décision. Elle permet de réaliser des études de marché rapidement et aussi d’offrir une expérience client fluide.</p>
           </Grid>
 
           <Grid  item xs={6} className="order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">

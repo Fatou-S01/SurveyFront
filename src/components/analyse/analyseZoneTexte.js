@@ -6,6 +6,8 @@ import axios from "axios";
 import content from '../../assets/content@2x.png'
 import facher from '../../assets/fâcher@2x.png'
 import neutre from '../../assets/neutre@2x.png'
+import { Grid } from '@mui/material';
+import './analyse.css';
 
 
 
@@ -53,17 +55,17 @@ const handleSubmit2 = () =>
 }
  
   return (<div><div className='mb-2'>Veuillez choisir un des algorithmes suivants pour l'analyse de cette zone de texte</div>
-    <button onClick={handleSubmit1} className="mx-5">WORLDCLOUD </button>
-    <button onClick={handleSubmit2}> SENTIMENT ANALASYS </button>
+    <button onClick={handleSubmit1} className="btn402" style = {{ marginLeft: '8%', borderStyle: 'solid', borderWidth:'1px', borderColor:'#2a9e9e', borderRadius: '30px'}}>WORLDCLOUD </button>
+    <button onClick={handleSubmit2} className="btn402" style = {{ marginLeft: '8%', borderStyle: 'solid', borderWidth:'1px', borderColor:'#2a9e9e', borderRadius: '30px'}}> SENTIMENT ANALASYS </button>
      {wordOrSentiment?<ReactWordcloud
         options={options}
         size={size}
         words={nwords}
-      />:<div className='row mt-5'>
-        <div className='col' ><span className="sentiment mx-4">{sentiments['positive']}</span><img src={content} className="emoji"/></div>
-      <div className='col'><span className="sentiment mx-4">{sentiments['negative']}</span><img src={facher} className="emoji"/></div>
-      <div className='col'><span className="sentiment mx-4">{sentiments['neutral']}</span><img src={neutre}className="emoji"/></div>
-      </div>}   
+      />:<Grid container className='row mt-5' style={{marginTop:'25px'}}>
+        <Grid item xs = {4} className='col' ><span className="sentiment mx-4">{sentiments['positive']}</span><img src={content} className="emoji"/></Grid>
+      <Grid item xs = {4} className='col'><span className="sentiment mx-4">{sentiments['negative']}</span><img src={facher} className="emoji"/></Grid>
+      <Grid item xs = {4} className='col'><span className="sentiment mx-4">{sentiments['neutral']}</span><img src={neutre}className="emoji"/></Grid>
+      </Grid>}   
     </div>)
 }
 

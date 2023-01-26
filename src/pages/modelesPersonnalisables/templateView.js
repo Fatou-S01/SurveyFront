@@ -11,7 +11,16 @@ function TemplateView(){
   
   const navigate1 = useNavigate();
   const params = useParams();
-  const [modele, setModele] = useState("")
+  const [modele, setModele] = useState("");
+  const [sondageModele,setSondageModele]=useState("");
+
+  useEffect(() => {
+    axios.get(`http://127.0.0.1:4030/api/modelePersonnalisable/${params.id_template}`).then((response) => {
+      setSondageModele(response.data.modelePersonnalisable)
+    }
+    
+);
+  },[])
 
   const { data,isLoading} = useQuery(["modele"], () => {
     return axios.get(`http://127.0.0.1:4030/api/questionPredefinie/questionPredefiniesModelePerso/${params.id_template}`).then((response) => 
@@ -28,7 +37,7 @@ const saveSondage = () => {
     { 
         userId: params.id_user,
         titreSondage: params.titre_template,
-        description: 'description',
+        description: sondageModele.description,
         statutSondage: 'private',
     }).then((response) => {
       const test = response.data
@@ -99,7 +108,7 @@ const saveSondage = () => {
         <Grid item  xs={6}>
         <div id='text_template'>
         <h1 id='titre_template'>{params.titre_template}</h1>
-        <div id='text_card'>{'data.description'}</div>
+        <div id='text_card'>{sondageModele.description}</div>
         </div>
         <div id='bouton_green'>
         <button className='bouton_green_use' onClick={saveSondage}>Use this template</button>

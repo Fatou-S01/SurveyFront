@@ -47,10 +47,10 @@ if(isLoading){
         return <DatePicker1 value={value.intituleQuestion}/>
       }
       else if(value.typeQuestion == 'Checkbox'){
-        return <Checkbox1 value1={value.intituleQuestion} optionValue1={'e'} optionValue2={'t'} optionValue3={'t'}/>
+        return <Checkbox1 value1={value.intituleQuestion} optionValue1={'Excellent'} optionValue2={'Good'} optionValue3={'Mauvais'}/>
       }
       else{
-        return <MultipleChoice value1={value.intituleQuestion} optionValue1={'e'} optionValue2={'t'}/>
+        return <MultipleChoice value1={value.intituleQuestion} optionValue1={'Oui'} optionValue2={'Non'}/>
       }
       })
       }

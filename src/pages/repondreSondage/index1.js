@@ -1,4 +1,4 @@
-import {React, useContext, useEffect}  from 'react';
+import {React, useContext, useEffect, useState}  from 'react';
 
 import {
   Button,
@@ -22,8 +22,17 @@ import { Option1 } from '.';
 
 function AnswerSondage(){
   const params = useParams();
-  
+  const [sondage,setSondage] = useState('');
   const size = useContext(ResponsiveContext);
+
+  useEffect(() => {
+    axios.get(`http://127.0.0.1:4030/api/sondages/${params.id_sondage}`).then((response) => {
+      setSondage(response.data.sondage)
+    }
+    
+);
+  },[])
+
   const { data,isLoading} = useQuery(["question"], () => {
     return axios.get(`http://127.0.0.1:4030/api/questions/questionsSondage/${params.id_sondage}`).then((response) => 
         response.data.question
@@ -38,7 +47,7 @@ function AnswerSondage(){
    
 
    <div> <h2 className='sign_in' ><i id='logo228' style= {{fontSize:'25px'}}>Faki</i><i id='logo118' style= {{fontSize:'25px'}}>Survey</i></h2></div>
-    <div style = {{textAlign:'center'}}>Description: {'data.description'}</div>
+    <div style = {{textAlign:'center'}}>Description: {sondage.description}</div>
     <div style={{display: 'flex', justifyContent:'center',marginTop:'15px'}}>
       <Form
         onSubmit={({ value }) => { 
@@ -132,7 +141,7 @@ function AnswerSondage(){
         name={value.intituleQuestion}
       >
        
-      <CheckBoxGroup id="check"  name={value.intituleQuestion} options={['1H1','2H2','3H3']} />
+      <CheckBoxGroup id="check"  name={value.intituleQuestion} options={['Agriculture','Elevage','Pêche']} />
        
       </FormField>
         </>
@@ -145,7 +154,7 @@ function AnswerSondage(){
         name={value.intituleQuestion}
       >
         <RadioButtonGroup
-          options={['GIT','GEM']}
+          options={['Oui','Non']}
           id="choice"
           name={value.intituleQuestion} 
         />

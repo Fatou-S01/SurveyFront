@@ -54,7 +54,7 @@ function AnalyseGraphique(){
         <Grid container key={question[0].intituleQuestion} className="mb-5 row" style={{marginBottom:'20px'}}>
         <Grid item xs={6} className='col' style={{paddingRight:'10px'}}>
         <h4 className='mb-3'>{index +1}-  {question[0].intituleQuestion}</h4>
-        { question[0].typeQuestion=='zoneTexte'? <><div>Reponses  {`(${question[1].length})`}</div><AnalyseZoneTexte datasets= {question[1].join('. ')}/></> : <><div>Reponses  {`(${formatData(question).nReponsesTot})`}</div>
+        { question[0].typeQuestion=='zoneTexte'? <><div>Reponses  {`(${question[1].length})`}</div><AnalyseZoneTexte datasets= {question[1]}/></> : <><div>Reponses  {`(${formatData(question).nReponsesTot})`}</div>
         <Graphique datasets={question}/></> }
         </Grid>
         {question[0].typeQuestion=='zoneTexte'?<></>: <Grid item xs={6} className='col my-auto' style={{marginTop:'25px'}}>

@@ -22,3 +22,14 @@ th{
 .sentiment{
     font-size: 20px;
 }
+.btn402{
+    text-decoration: none;
+    color: #2A9E9E;
+    border: solid 1px #2A9E9E;
+    border-radius: 30px;
+    padding: 8px;
+  }
+  .btn402:hover{
+    background-color: #2A9E9E;
+    color: #fff
+  }
